@@ -18,7 +18,12 @@ Lien vers l'url du `snapcraft.yaml` de Youtube-Downloader : http://bazaar.launch
 
 ## II. Qu'est-ce que Snapcraft ?  
 ### A. Workflow  
+### C. Parts
+
+[_A central aspect of a snapcraft recipe is a "part". A part is a piece of software or data that the snap package requires to work or to build other parts. Each part is managed by a snapcraft plugin and parts are usually independent of each other._](https://developer.ubuntu.com/en/snappy/build-apps/#parts)
+
 ### B. Plugins  
+### C. Interfaces
 ## III. Etude du `snapcraft.yaml` de Youtube-Downloader  
 ### A. Meta-datas  
 
@@ -37,6 +42,15 @@ description: |
 - **description :** Description du snap
 
 ### B. Apps  
+
+````yaml
+apps:
+  run:
+    command: usr/bin/python3 $SNAP/usr/bin/youtube-dl
+    plugs: [home, network, network-bind]
+````
+
+
 ### C. Partie `youtube-dl`  
 ### D. Partie `ffmpeg`  
 ## IV. Réorganiser les parties  
