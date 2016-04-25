@@ -50,6 +50,19 @@ apps:
     plugs: [home, network, network-bind]
 ````
 
+[_apps (yaml subsection) A map of keys for applications. These are either daemons or command line accessible binaries.
+command (string) Specifies the internal command to expose. If it is a daemon this command is used to start the service._](https://developer.ubuntu.com/en/snappy/build-apps/snapcraft-syntax/)
+
+- **`run` :** Définition de la méthode `youtube-dl.run`
+- **`command` :** commande lancée par la méthode `youtube-dl.run`. Ici le script python3 `$SNAP/usr/bin/youtube-dl` lancé via Python3, `$SNAP` ayant pour valeur le point de montage du snap.
+- **`plugs` :** Liste des interfaces sur lesquelles pourra se connecter le snap.
+
+The snap defines 3 plugs for the home, network and network-bind interfaces. All but the home interface plug automatically connect to the provider's slot with the same name and are thus granted access to the relevant resources. As writing and reading to the /home part of the filesystem is considered a sensitive operation, the plug is intendedly not autoconnected for users upon snap installation. For security reasons, users must explicitly acknowledge that they agree for this app to access the filesystem.
+
+While in the future users will be prompted in a more interactive way, at the time of writing, the way to grant access to the app to the /home filesystem is to manually connect the plug and slot ends of the home interface with this command:
+
+sudo snap connect youtube-dl:home ubuntu-core:home
+Note how the connect subcommand puts together the consumer snap's plug (youtube-dl:home) with the provider snap's slot (ubuntu-core:home) [](https://developer.ubuntu.com/en/desktop/examples/#snap-python)
 
 ### C. Partie `youtube-dl`  
 ### D. Partie `ffmpeg`  
