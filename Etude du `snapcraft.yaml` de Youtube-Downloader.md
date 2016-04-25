@@ -67,6 +67,17 @@ Note how the connect subcommand puts together the consumer snap's plug (youtube-
 [List of interface](https://github.com/ubuntu-core/snappy/blob/master/docs/interfaces.md#supported-interfaces---basic)
 
 ### C. Partie `youtube-dl`  
+
+#### 1. Etude de la documentation officielle de `YouTube-dl`
+
+````yaml
+  youtube-dl:
+    plugin: python3
+    source: https://github.com/rg3/youtube-dl.git
+    source-type: git
+````
+
+- **plugin :** `youtube-dl` est écrit en Python. Le plugin `python3`
 ### D. Partie `ffmpeg`  
 ## IV. Réorganiser les parties  
 ## V. Mutualiser les parties  
