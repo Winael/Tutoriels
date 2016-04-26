@@ -1,0 +1,173 @@
+<!doctype html>
+
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Tutoriel | Introduction à Snapcraft - Etude de YouTube-downloader snap | by Winael @vinzjobard | Avril 2016</title>
+    
+    <meta name="description" content="Introduction à l'outils de création de snaps pour Ubuntu à travers de l'étude de l'exemple du snap YouTube-Downloader" />
+    <meta name="author" content="Winael" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" media="all" href="css/ubuntu-styles.css"/>
+
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    <link href="css/ubuntu-template.css" rel="stylesheet" />
+    <link href="css/youtube-dl.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+</head>
+
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step box box-highlight" data-x="0" data-y="0" data-z="0">
+        <h1>
+            Tutoriel :<br />
+            Introduction à Snapcraft
+        </h1>
+
+        <div class="subtitle">
+            - Etude du snap d'exemple YouTube-Downloader -
+        </div>
+
+        <div class="signature">
+            <p>Winael <<a href="mailto:vinzjobard@ubuntu.com">vinzjobard@ubuntu.com</a>></p>
+        </div>
+    </div>
+
+    <!-- PART 1 : Présentation -->
+
+        <div id="presentation" class="step box box-highlight generic-slide" data-x="0" data-z="-0" data-rotate-y="180">
+    
+            <div class="titre-slide">
+                <h2>Présentation</h2>
+            </div>
+
+            <div class="content">
+
+                <div class="six-col">
+                    <ul>
+                        <li class="prez"><u>Prénom NOM :</u> <i>Vincent JOBARD</i></li>
+                        <li class="prez"><u>Surnom :</u> <i>Winael</i></li>
+                        <li class="prez"><u>Blog :</u> <i><a href="http://winael.github.io/">http://winael.github.io/</a></i></li>
+                        <li class="prez"><u>Email :</u> <i><a href="mailto:vinzjobard@ubuntu.com">vinzjobard@ubuntu.com</a></i></li>
+                        <li class="prez"><u>Wiki :</u> <i><a href="https://wiki.ubuntu.com/Winael">https://wiki.ubuntu.com/Winael</a></i></li>
+                    </ul>
+                </div>
+
+                <div class="six-col last-col rs">
+                    <ul>
+                        <li class="rs"><img src="img/logo-fb.png" width="75px" /> <i><a href="https://www.facebook.com/vinzjobard">vinzjobard</a></i></li>
+                        <li class="rs"><img src="img/google_plus_icon.png" width="75px" /> <i><a href="https://plus.google.com/+VincentJOBARD">+Vincent JOBARD</a></i></li>
+                        <li class="rs"><img src="img/logo-twitter.png" width="75px" /> <i><a href="https://twitter.com/vinzjobard">@vinzjobard</a></i></li>
+                        <li class="rs"><img src="img/logo-linkedin.png" width="75px" /> <i><a href="https://www.linkedin.com/in/vincent-jobard-26b046117">vincent-jobard-26b046117</a></i></li>
+                        <li class="rs"><img src="img/logo-viadeo.png" width="75px" /> <i><a href="http://www.viadeo.com/p/0024iv3cy4nc1mt">Vincent JOBARD</a></i></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    <!-- PART 2 : Les snaps, qu'est-ce que c'est ? -->
+
+        <div id="snapkeskecest" class="step box box-highlight title-part-slide" data-x="0" data-y="1200" data-z="0" data-rotate-y="180">
+        
+            <h2>Les snaps, qu'est-ce que c'est ?</h2>
+
+        </div>
+
+        <div id="snapkeskecest-origine-1" class="step box box-highlight generic-slide" data-x="0" data-y="1200" data-z="0" data-rotate-y="360">
+            
+            <div class="titre-slide">
+                <h2>A l'origine...</h2>
+            </div>
+
+            <div class="content">
+
+                <div class="six-col">
+                    <img src="img/snappy.png" width="400px" />
+                </div>
+                
+                <div class="six-col last-col">
+                    <ul>
+                        <li><span class="chevron">></span> Version 2.0 du paquet click développé pour l'univers mobile Ubuntu</li>
+                        <li><span class="chevron">></span> Format de paquet conçu pour Snappy Ubuntu Core</li>
+                        <li><span class="chevron">></span> D'abord sur le Cloud (décembre 2014)</li>
+                        <li><span class="chevron">></span> Puis sur l'IoT (courant 2015)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="snapkeskecest-origine-2" class="step box box-highlight generic-slide" data-x="0" data-y="1200" data-z="0" data-rotate-y="360">
+
+            <div class="titre-slide">
+                <h2>A l'origine...</h2>
+            </div>
+
+            <div class="content">
+                
+                <div class="six-col">
+                    <img src="img/ubuconsummit_shuttle_keynote1.JPG" width="400px" class="box box-highlight" />
+                </div>
+
+                <div class="six-col last-col">
+                    <ul>
+                        <li><span class="chevron">></span> Mark Shuttleworth annonce l'arrivée des snaps sur les environnement classiques (Poste de travail, Server, ...) d'Ubuntu à partir de la 16.04 LTS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="snapkeskecest-techniquement" class="step box box-highlight generic-slide" data-x="0" data-y="2400" data-z="0" data-rotate-y="360">
+
+            <div class="titre-slide">
+                <h2>Et techniquement ?</h2>
+            </div>
+            
+            <div class="content">
+
+                <p><strong>Tarball en Squashfs :</strong></p>
+                <div class="six-col">
+                    
+                </div>
+                <div class="six-col last-col">
+                    <ul>
+                        <li><span class="chevron">></span> Montée en lecture seule</li>
+                        <li><span class="chevron">></span> Isolée dans un espace de nom au niveau du noyau</li>
+                        <li><span class="chevron">></span> Processus filtrés avec Seccomp</li>
+                        <li><span class="chevron">></span> Protégée par AppArmor</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>
+
+
