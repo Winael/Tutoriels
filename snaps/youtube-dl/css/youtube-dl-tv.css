@@ -1,0 +1,99 @@
+
+
+#title h1 {
+	margin-top: 200px;
+}
+
+#presentation .content {
+	padding-top: 50px;
+}
+
+#snapkeskecest-origine-1 img {
+    margin-top: 50px;
+    transform: rotate(0deg);
+    margin-left: 100px;
+}
+
+#snapkeskecest-origine-2 img {
+    margin-left: 75px;
+}
+
+#snapkeskecest-origine-2 ul {
+	margin-top: 75px;
+}
+
+.rs img {
+	vertical-align: middle;
+}
+
+li.rs {
+	margin-top: -15px;
+}
+
+#snapkeskecest-techniquement img {
+	margin-left: 150px;
+	margin-top: 25px;
+}
+
+#snapcraft-workflow-1 .content {
+	padding-top: 75px;
+}
+
+#snapcraft-workflow-1 li p {
+	font-size: 20px;
+}
+
+#snapcraft-workflow-1 .licontent {
+	padding-left: 15px;	
+}	
+
+
+#snapcraft-workflow-1 li code {
+	font-size: 20px;
+}
+
+#snapcraft-workflow-2 .content {
+	padding-top: 75px;
+}
+
+#snapcraft-workflow-2 li p {
+	font-size: 20px;
+}
+
+#snapcraft-workflow-2 .licontent {
+	padding-left: 15px;	
+}	
+
+
+#snapcraft-workflow-2 li code {
+	font-size: 20px;
+}
+
+#snapcraft-workflow-3 .content {
+	padding-top: 75px;
+}
+
+#snapcraft-workflow-3 li p {
+	font-size: 20px;
+}
+
+#snapcraft-workflow-3 .licontent {
+	padding-left: 15px;	
+}	
+
+
+#snapcraft-workflow-3 li code {
+	font-size: 20px;
+}
+
+#snapcraft-workflow-3 p {
+	font-size: 20px;
+}
+
+#snapcraft-workflow-3 pre {
+	margin-left: 50px;
+	font-size: 20px;
+	margin-top: 20px;
+}
+
+

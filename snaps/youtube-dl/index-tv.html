@@ -15,8 +15,7 @@
     <link rel="stylesheet" type="text/css" media="all" href="css/ubuntu-styles.css"/>
 
     <link href="css/impress-demo.css" rel="stylesheet" />
-    <link href="css/ubuntu-template-tv
-    .css" rel="stylesheet" />
+    <link href="css/ubuntu-template-tv.css" rel="stylesheet" />
     <link href="css/youtube-dl-tv.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     <link rel="shortcut icon" href="favicon.png" />
@@ -33,7 +32,7 @@
 
 <div id="impress">
 
-    <div id="title" class="step box box-highlight" data-x="0" data-y="0" data-z="0">
+    <div id="title" class="step" data-x="0" data-y="0" data-z="0">
         <h1>
             Tutoriel :<br />
             Introduction à Snapcraft
@@ -50,7 +49,7 @@
 
     <!-- PART 1 : Présentation -->
 
-        <div id="presentation" class="step box box-highlight generic-slide" data-x="0" data-z="-0" data-rotate-y="180">
+        <div id="presentation" class="step generic-slide" data-x="0" data-z="-0" data-rotate-y="180">
     
             <div class="titre-slide">
                 <h2>Présentation</h2>
@@ -83,13 +82,13 @@
 
     <!-- PART 2 : Les snaps, qu'est-ce que c'est ? -->
 
-        <div id="snapkeskecest" class="step box box-highlight title-part-slide" data-x="0" data-y="1200" data-z="0" data-rotate-y="180">
+        <div id="snapkeskecest" class="step title-part-slide" data-x="0" data-y="1200" data-z="0" data-rotate-y="180">
         
             <h2>Les snaps, qu'est-ce que c'est ?</h2>
 
         </div>
 
-        <div id="snapkeskecest-origine-1" class="step box box-highlight generic-slide" data-x="0" data-y="1200" data-z="0" data-rotate-y="360">
+        <div id="snapkeskecest-origine-1" class="step generic-slide" data-x="0" data-y="1200" data-z="0" data-rotate-y="360">
             
             <div class="titre-slide">
                 <h2>A l'origine...</h2>
@@ -112,7 +111,7 @@
             </div>
         </div>
 
-        <div id="snapkeskecest-origine-2" class="step box box-highlight generic-slide" data-x="0" data-y="1200" data-z="0" data-rotate-y="360">
+        <div id="snapkeskecest-origine-2" class="step generic-slide" data-x="0" data-y="1200" data-z="0" data-rotate-y="360">
 
             <div class="titre-slide">
                 <h2>A l'origine...</h2>
@@ -132,7 +131,7 @@
             </div>
         </div>
 
-        <div id="snapkeskecest-techniquement" class="step box box-highlight generic-slide" data-x="0" data-y="2400" data-z="0" data-rotate-y="360">
+        <div id="snapkeskecest-techniquement" class="step generic-slide" data-x="0" data-y="2400" data-z="0" data-rotate-y="360">
 
             <div class="titre-slide">
                 <h2>Et techniquement ?</h2>
@@ -142,7 +141,7 @@
 
                 <p><strong>Tarball en Squashfs :</strong></p>
                 <div class="six-col">
-                    
+                    <img src="img/Pokeball.png" width="300px" />
                 </div>
                 <div class="six-col last-col">
                     <ul>
@@ -154,6 +153,105 @@
                 </div>
             </div>
         </div>
+
+    <!-- Part 3 : Qu'est-ce que Snapcraft ? -->
+
+        <div id="snapcraftkeskecest" class="step title-part-slide" data-x="0" data-y="2400" data-z="0" data-rotate-y="180">
+        
+            <h2>Snapcraft</h2>
+
+        </div>
+
+        <div id="snapcraft-workflow-1" class="step generic-slide" data-x="0" data-y="3600" data-z="0" data-rotate-y="180">
+            
+            <div class="titre-slide">
+                <h2>Le workflow de Snapcraft</h2>
+            </div>
+
+            <div class="content">
+              
+                <div class="twelve-col last-col">
+                    <ul>
+                        <li>
+                            <p><span class="chevron">></span> <strong>Récupération des sources (<em>« Pull »</em>)</strong></p>
+                            <div class="licontent">
+                                <p>Première étape. Récupération du contenu depuis un dépôt git ou téléchargement de binaire.</p>
+                                <p>Le contenu de chaque pièce sera stocké dans le répertoire <code>parts/&lt;part-name&gt;/src</code></p>
+                            </div>
+                        </li>
+                        <li>
+                            <p><span class="chevron">></span> <strong>Construction des pièces (<em>« Build »</em>)</strong></p>
+                            <div class="licontent">
+                                <p>Cette étape fait suite à l'étape de <em>« Récupération des sources »</em>. Chaque pièce est construite dans son répertoire <code>parts/&lt;part-name&gt;/build</code> et s'installe dans son répertoire <code>parts/&lt;part-name&gt;/install</code></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="snapcraft-workflow-2" class="step generic-slide" data-x="0" data-y="3600" data-z="0" data-rotate-y="180">
+            
+            <div class="titre-slide">
+                <h2>Le workflow de Snapcraft</h2>
+            </div>
+
+            <div class="content">
+              
+                <div class="twelve-col last-col">
+                    <ul>
+                        <li>
+                            <p><span class="chevron">></span> <strong>Etape de transit (<em>« Stage »</em>)</strong></p>
+                            <div class="licontent">
+                                <p>Après l'étape de construction de chaque pièce, les pièce sont combinées en une seule arborescence de répertoires que l'on appelle «zone de transit» qui se trouv dans le répertoire <code>./stage</code>.</p>
+                                <p>C'est la zone où toutes les pièces peuvent partager des actifs tels que des librairies.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <p><span class="chevron">></span> <strong>Dépouillement du snap (<em>« Strip »</em>)</strong></p>
+                            <div class="licontent">
+                                <p>L'étape de dépuillement déplace les données dans le répertoire <code>./snap</code> qui ne contient que le contenu qui sera mis dans le paquet sanp final, contrairement à la zone de transit qui peut inclure des fichiers de développement non destinés au paquet.</p>
+                                <p>Les informations de métadonnées Snappy de votre projet seront aussi placées dans <code>./snap/meta</code>.</p>
+                                <p>Ce répertoire <code>./snap</code> est utile pour inspecter ce qui se passe dans votre application snap et de faire des post-traitements finaux sur la sortie du snapcraft.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="snapcraft-workflow-3" class="step generic-slide" data-x="0" data-y="3600" data-z="0" data-rotate-y="180">
+            
+            <div class="titre-slide">
+                <h2>Le workflow de Snapcraft</h2>
+            </div>
+
+            <div class="content">
+              
+                <div class="twelve-col last-col">
+                    <ul>
+
+                        <li>
+                            <p><span class="chevron">></span> <strong>Construction du paquet snap (<em>« Snap »</em>)</strong></p>
+                            <div class="licontent">
+                                <p>La dernière étape construit le paquet snap à l'extérieur du répertoire du snap.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <p>Chaque étape du workflow peut être simulée en la précisant en argument de Snapcraft :</p>
+                    <pre>
+    $ snapcraft pull
+    $ snapcraft build
+    $ snapcraft stage
+    $ snapcraft strip
+    $ snapcraft snap
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+
 </div>
 
 <div class="hint">
