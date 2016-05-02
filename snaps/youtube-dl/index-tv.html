@@ -18,8 +18,8 @@
     <link href="css/ubuntu-template-tv.css" rel="stylesheet" />
     <link href="css/youtube-dl-tv.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-    <link rel="shortcut icon" href="favicon.png" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="apple-touch-icon" href="img/favicon.ico" />
 
 </head>
 
@@ -162,7 +162,23 @@
 
         </div>
 
-        <div id="snapcraft-workflow-1" class="step generic-slide" data-x="0" data-y="3600" data-z="0" data-rotate-y="180">
+        <div id="snapcraft-part" class="step generic-slide" data-x="0" data-y="3600" data-z="0" data-rotate-y="180">
+            
+            <div class="titre-slide">
+                <h2>Les parties dans Snapcraft</h2>
+            </div>
+
+            <div class="content">
+                
+                <div class="twelve-col last-col">
+                    <p>
+                        Les <em>« parties »</em> constituent un aspect central des recettes Snapcraft. Une partie est un morceau de logiciel ou de données requis pour faire fonctionner le paquet snap ou construire une autre partie. Chaque partie est gérée par un plugin Snapcraft, et les parties sont généralement indépendantes les unes des autres.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="snapcraft-workflow-1" class="step generic-slide" data-x="0" data-y="4800" data-z="0" data-rotate-y="180">
             
             <div class="titre-slide">
                 <h2>Le workflow de Snapcraft</h2>
@@ -176,13 +192,13 @@
                             <p><span class="chevron">></span> <strong>Récupération des sources (<em>« Pull »</em>)</strong></p>
                             <div class="licontent">
                                 <p>Première étape. Récupération du contenu depuis un dépôt git ou téléchargement de binaire.</p>
-                                <p>Le contenu de chaque pièce sera stocké dans le répertoire <code>parts/&lt;part-name&gt;/src</code></p>
+                                <p>Le contenu de chaque partie sera stocké dans le répertoire <code>parts/&lt;part-name&gt;/src</code></p>
                             </div>
                         </li>
                         <li>
-                            <p><span class="chevron">></span> <strong>Construction des pièces (<em>« Build »</em>)</strong></p>
+                            <p><span class="chevron">></span> <strong>Construction des parties (<em>« Build »</em>)</strong></p>
                             <div class="licontent">
-                                <p>Cette étape fait suite à l'étape de <em>« Récupération des sources »</em>. Chaque pièce est construite dans son répertoire <code>parts/&lt;part-name&gt;/build</code> et s'installe dans son répertoire <code>parts/&lt;part-name&gt;/install</code></p>
+                                <p>Cette étape fait suite à l'étape de <em>« Récupération des sources »</em>. Chaque partie est construite dans son répertoire <code>parts/&lt;part-name&gt;/build</code> et s'installe dans son répertoire <code>parts/&lt;part-name&gt;/install</code></p>
                             </div>
                         </li>
                     </ul>
@@ -190,7 +206,7 @@
             </div>
         </div>
 
-        <div id="snapcraft-workflow-2" class="step generic-slide" data-x="0" data-y="3600" data-z="0" data-rotate-y="180">
+        <div id="snapcraft-workflow-2" class="step generic-slide" data-x="0" data-y="4800" data-z="0" data-rotate-y="180">
             
             <div class="titre-slide">
                 <h2>Le workflow de Snapcraft</h2>
@@ -203,8 +219,8 @@
                         <li>
                             <p><span class="chevron">></span> <strong>Etape de transit (<em>« Stage »</em>)</strong></p>
                             <div class="licontent">
-                                <p>Après l'étape de construction de chaque pièce, les pièce sont combinées en une seule arborescence de répertoires que l'on appelle «zone de transit» qui se trouv dans le répertoire <code>./stage</code>.</p>
-                                <p>C'est la zone où toutes les pièces peuvent partager des actifs tels que des librairies.</p>
+                                <p>Après l'étape de construction de chaque partie, les partie sont combinées en une seule arborescence de répertoires que l'on appelle «zone de transit» qui se trouve dans le répertoire <code>./stage</code>.</p>
+                                <p>C'est la zone où toutes les parties peuvent partager des actifs tels que des librairies.</p>
                             </div>
                         </li>
                         <li>
@@ -221,7 +237,7 @@
         </div>
 
 
-        <div id="snapcraft-workflow-3" class="step generic-slide" data-x="0" data-y="3600" data-z="0" data-rotate-y="180">
+        <div id="snapcraft-workflow-3" class="step generic-slide" data-x="0" data-y="4800" data-z="0" data-rotate-y="180">
             
             <div class="titre-slide">
                 <h2>Le workflow de Snapcraft</h2>
