@@ -5,7 +5,7 @@ I. Qu'est-ce qu'un snap ?
 -------------------------
 
 A. A l'origine
-..............
+**************
 
   - Paquet d'application initialement prévu pour Snappy Ubuntu Core
   - Pour le cloud depuis Décembre 2014
