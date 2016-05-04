@@ -6,20 +6,40 @@ I. Qu'est-ce qu'un snap ?
 
 ### A. A l'origine
 
-  - Paquet d'application initialement prévu pour Snappy Ubuntu Core
-  - Pour le cloud depuis Décembre 2014
-  - Pour l'IoT courant 2015
+A l'origine, les snaps sont nés avec le projet Snappy Ubuntu Core. Ils sont en quelques sortes la version 2.0 des paquets clicks développés pour Ubuntuphone.
 
-B. Et techniquement ?
-.....................
+Les premiers snaps sont donc logiquement apparus avec la première sortie de Snappy Ubuntu Core... sur le nuage, en décembre 2014 (d'abord sur Microsoft Azure, puis sur les autres plateformes quelques jours plus tard).
 
-  - Tarball en squashfs
-  - est montée en lecture seule
-  - isolée dans un espace de nom du noyau
-  - protégée par seccomp et AppArmor
+Début 2015, Snappy Ubuntu Core et ses snaps débarquaient sur l'Internet des Objets. C'est l'apparition de drones, robots, refrigidérateurs, switchs, gateway, utilisant Snappy et les snaps.
 
-C. Mais pourquoi faire ?
-........................
+Un an plus tard, lors de l'UbuCon Summit de cette années qui s'est déroulé à LA, Mark Shuttleworth a annoncé l'arrivée des snaps sur la version traditionnelle du poste de travail pour Ubuntu 16.04 LTS.
+
+### B. Et techniquement ?
+
+Alors qu'est-ce qu'un snaps ? Contrairement à ce qu'en pensent certains, il ne s'agit en aucun cas d'un paquet d'installation, tes que le serait MSI chez Microsoft.
+
+Un snaps est en réalité un système de fichier encapsulé dans une archive squashfs, qui est montée en lecture seule dans un espace de nom dédié du noayu Linux. La capsule est protégée via des profiles Seccomp, permettant de filtrer les processus, et des profile AppArmor, limitant l'accès sur la base de l'adresse MAC de la capsule. 
+
+### C. Comment ça fonctionne ?
+
+How does it all work?
+
+Snappy Ubuntu Core sur le poste de travail et le serveur fonctionne de la manière suivante :
+
+- Les snaps sont installés dans le système de fichier de la machine hôte. Il sera visible dans le répertoire `/snap/$name/$version/`
+- Quand un snap est lancé :
+    - Un espace de nom esclave est créé
+    - un répertoire `/tmp` priv est créé
+    - `ubuntu-core-launcher` monte à l'aveugle les répertoire `/bin`, `/lib`, `/lib64`, `/sbin`, `/usr` depuis le snap d'`ubuntu-core`
+
+
+The ubuntu-core-launcher applies the AppArmor/Seccomp confinement
+The application is launched: it can see the host's /dev, /proc/, /sys, /media and other mount points, but that might be mitigated by AppArmor
+
+https://developer.ubuntu.com/en/desktop/get-started/#diving-deeper-into-snaps
+
+### C. Mais pourquoi faire ?
+
 
 ## II. Qu'est-ce que Snapcraft ?  
 ### A. Parts
