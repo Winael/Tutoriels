@@ -20,8 +20,6 @@ Alors qu'est-ce qu'un snaps ? Contrairement à ce qu'en pensent certains, il ne 
 
 Un snaps est en réalité un système de fichier encapsulé dans une archive squashfs, qui est montée en lecture seule dans un espace de nom dédié du noayu Linux. La capsule est protégée via des profiles Seccomp, permettant de filtrer les processus, et des profile AppArmor, limitant l'accès sur la base de l'adresse MAC de la capsule. 
 
-<p><em><strong>Source :</strong> https://developer.ubuntu.com/en/desktop/get-started/#diving-deeper-into-snaps</em>
-
 ### C. Comment ça fonctionne ?
 
 How does it all work?
@@ -35,20 +33,22 @@ Snappy Ubuntu Core sur le poste de travail et le serveur fonctionne de la maniè
     - `ubuntu-core-launcher` monte à l'aveugle les répertoire `/bin`, `/lib`, `/lib64`, `/sbin`, `/usr` depuis le snap d'`ubuntu-core`
 
 Le lanceur `ubuntu-core-launcher` applique le confinement AppArmor/Seccomp
-L'application est lancée. Elle peut voir les points de montage `/dev`, `/proc`, `/sys`, `/media` ou autres du système hôte, mais atténué par le profil AppArmor<sup><a href="">2</sup>
+L'application est lancée. Elle peut voir les points de montage `/dev`, `/proc`, `/sys`, `/media` ou autres du système hôte, mais atténué par le profil AppArmor.
 
-The ubuntu-core-launcher applies the AppArmor/Seccomp confinement
-The application is launched: it can see the host's /dev, /proc/, /sys, /media and other mount points, mais qui pourrait 
-
-
+<p><em><strong>Source :</strong> https://developer.ubuntu.com/en/desktop/get-started/#diving-deeper-into-snaps</em></p>
 
 ### C. Mais pourquoi faire ?
 
 
-## II. Qu'est-ce que Snapcraft ?  
-### A. Parts
 
-[_A central aspect of a snapcraft recipe is a "part". A part is a piece of software or data that the snap package requires to work or to build other parts. Each part is managed by a snapcraft plugin and parts are usually independent of each other._](https://developer.ubuntu.com/en/snappy/build-apps/#parts)
+## II. Qu'est-ce que Snapcraft ?  
+### A. Les parties
+
+L'un des points centraux de Snapcraft réside dans l'utilisation de « parties » de logiciel.
+
+[_A central aspect of a snapcraft recipe is a "part". A part is a piece of software or data that the snap package requires to work or to build other parts. Each part is managed by a snapcraft plugin and parts are usually independent of each other._]()
+
+<p><em><strong>Source :</strong> https://developer.ubuntu.com/en/snappy/build-apps/#parts</em></p>
 
 ### B. Plugins  
 ### C. Interface
