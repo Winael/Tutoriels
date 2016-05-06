@@ -20,6 +20,8 @@ Alors qu'est-ce qu'un snaps ? Contrairement à ce qu'en pensent certains, il ne 
 
 Un snaps est en réalité un système de fichier encapsulé dans une archive squashfs, qui est montée en lecture seule dans un espace de nom dédié du noayu Linux. La capsule est protégée via des profiles Seccomp, permettant de filtrer les processus, et des profile AppArmor, limitant l'accès sur la base de l'adresse MAC de la capsule. 
 
+<p><em><strong>Source :</strong> https://developer.ubuntu.com/en/desktop/get-started/#diving-deeper-into-snaps</em>
+
 ### C. Comment ça fonctionne ?
 
 How does it all work?
@@ -29,14 +31,16 @@ Snappy Ubuntu Core sur le poste de travail et le serveur fonctionne de la maniè
 - Les snaps sont installés dans le système de fichier de la machine hôte. Il sera visible dans le répertoire `/snap/$name/$version/`
 - Quand un snap est lancé :
     - Un espace de nom esclave est créé
-    - un répertoire `/tmp` priv est créé
+    - un répertoire `/tmp` privé est créé
     - `ubuntu-core-launcher` monte à l'aveugle les répertoire `/bin`, `/lib`, `/lib64`, `/sbin`, `/usr` depuis le snap d'`ubuntu-core`
 
+Le lanceur `ubuntu-core-launcher` applique le confinement AppArmor/Seccomp
+L'application est lancée. Elle peut voir les points de montage `/dev`, `/proc`, `/sys`, `/media` ou autres du système hôte, mais atténué par le profil AppArmor<sup><a href="">2</sup>
 
 The ubuntu-core-launcher applies the AppArmor/Seccomp confinement
-The application is launched: it can see the host's /dev, /proc/, /sys, /media and other mount points, but that might be mitigated by AppArmor
+The application is launched: it can see the host's /dev, /proc/, /sys, /media and other mount points, mais qui pourrait 
 
-https://developer.ubuntu.com/en/desktop/get-started/#diving-deeper-into-snaps
+
 
 ### C. Mais pourquoi faire ?
 
@@ -55,3 +59,4 @@ https://developer.ubuntu.com/en/desktop/get-started/#diving-deeper-into-snaps
   - stage
   - strip
   - snap
+
