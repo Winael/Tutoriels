@@ -22,8 +22,6 @@ Un snaps est en réalité un système de fichier encapsulé dans une archive squ
 
 ### C. Comment ça fonctionne ?
 
-How does it all work?
-
 Snappy Ubuntu Core sur le poste de travail et le serveur fonctionne de la manière suivante :
 
 - Les snaps sont installés dans le système de fichier de la machine hôte. Il sera visible dans le répertoire `/snap/$name/$version/`
@@ -37,9 +35,23 @@ L'application est lancée. Elle peut voir les points de montage `/dev`, `/proc`,
 
 <p><em><strong>Source :</strong> https://developer.ubuntu.com/en/desktop/get-started/#diving-deeper-into-snaps</em></p>
 
-### C. Mais pourquoi faire ?
+### D. Mais pourquoi faire ?
 
+#### 1. Des mise à jours transactionnelles
 
+Les mises à jours des snaps sont transactionnelles. Cela veut dire quelles ne peuvent se retrouver dans un état entre deux comme cela arrive parfois avec les mise à jour de paquets traditionnels
+
+#### 2. Des paquets isolés les un des autres
+
+Les snaps sont encapsulé avec toutes les librairies dont ils ont besoin. C'est à dire qu'une mise à jour d'un snaps ne peut pas entrainer de régression tant au niveau du système que pour les autres applications
+
+#### 3. Des paquets confinés
+
+Les snpas sont confinés au niveau du noyau et sécurisé au travers de profils de filtre processus Seccomp et de profil d'accès par adresse MAC AppArmor.
+
+**Attention :** Ces filtres ne peuvent protéger des accès aux fenêtres entre applications du à l'architecture du serveur graphique X11. L'isolation graphique ne pourra être apporté qu'au travers un serveur graphique sécurisé tel que MIR
+
+#### Des BLOBs immutables
 
 ## II. Qu'est-ce que Snapcraft ?  
 ### A. Les parties
