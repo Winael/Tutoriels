@@ -47,27 +47,51 @@ Les snaps sont encapsulé avec toutes les librairies dont ils ont besoin. C'est 
 
 #### 3. Des paquets confinés
 
-Les snpas sont confinés au niveau du noyau et sécurisé au travers de profils de filtre processus Seccomp et de profil d'accès par adresse MAC AppArmor.
+Les snaps sont confinés au niveau du noyau et sécurisé au travers de profils de filtre processus Seccomp et de profil d'accès par adresse MAC AppArmor.
+
+A tout moment l'utilisateur peut connaitre les interactions entre snaps et les activer/désactiver au besoin.
 
 **Attention :** Ces filtres ne peuvent protéger des accès aux fenêtres entre applications du à l'architecture du serveur graphique X11. L'isolation graphique ne pourra être apporté qu'au travers un serveur graphique sécurisé tel que MIR
 
-#### Des BLOBs immutables
+#### 4. Des BLOBs immutables
 
-## II. Qu'est-ce que Snapcraft ?  
-### A. Les parties
+Les paquets snaps sont des archives squashfs, donc en lecture seule. Aucune modification ne peut être fait au binaire. L'application est garantie fonctionner comme elle a été développée. Personne ne peut l'altérer
 
-L'un des points centraux de Snapcraft réside dans l'utilisation de « parties » de logiciel.
+## II. Qu'est-ce que Snapcraft ? 
 
-[_A central aspect of a snapcraft recipe is a "part". A part is a piece of software or data that the snap package requires to work or to build other parts. Each part is managed by a snapcraft plugin and parts are usually independent of each other._]()
+Snapcraft est un outils facilitant la construction et l'empaquetement d'applications en snap. Il est donc simple d'ajouter des composants depuis différentes sources et de les construire avec différentes technologies ou solutions. 
+
+### A. Les parties d'Application
+
+L'un des points centraux de Snapcraft réside dans l'utilisation de « parties » d'application. Une partie d'application est une pièce de logiciel ou de données requises par une snap pour fonctionner ou construire d'autres snaps. Chaque « partie » d'application est gérée par des greffons Snapcraft et sont généralement indépendante les unes des autres.
 
 <p><em><strong>Source :</strong> https://developer.ubuntu.com/en/snappy/build-apps/#parts</em></p>
 
 ### B. Plugins  
+
+Chaque _« partie »_ de logiciel a un plugin qui lui est associé fournissant le mécanisme permettant de la construire. Il existe une variété de plugins déjà inclus pour, permettant de constuire des projets basés sur Python 2 et 3, sur Go, Java, Cmake ou autotools. (Nous y reviendront plus en détail lors de l'études des fichiers `snapcraft.yaml` de différents projets)
+
 ### C. Interface
 
-### D. Workflow  
-  - pull
-  - build
+Une _interface_ donne à une snap la possibilité d'utiliser des ressources fournies par une autre snap, incluant bien évidement la snap du système d'exploitation (`ubuntu-core` étant lui même un snap).
+
+### D. Workflow 
+
+Voici une description du workflow qui s’exécute lorsque l’utilisateur exécute la commande snapcraft depuis le répertoire dans lequel se trouve le fichier snapcraft.yaml :
+
+#### 1. Récupération des sources (_« Pull »_)
+
+Première étape. Récupération du contenu depuis un dépôt git ou téléchargement de binaire.
+
+Le contenu de chaque partie sera stocké dans le répertoire `parts/&lt;part-name&gt;/src`
+
+#### 2. Construction des parties (_« Build »_)
+
+Cette étape fait suite à l'étape de _« Récupération des sources »_. 
+
+Chaque partie est construite dans son répertoire `parts/&lt;part-name&gt;/build` et s'installe dans son répertoire `parts/&lt;part-name&gt;/install`
+
+
   - stage
   - strip
   - snap
