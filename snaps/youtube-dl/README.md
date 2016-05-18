@@ -83,16 +83,41 @@ Voici une description du workflow qui s’exécute lorsque l’utilisateur exéc
 
 Première étape. Récupération du contenu depuis un dépôt git ou téléchargement de binaire.
 
-Le contenu de chaque partie sera stocké dans le répertoire `parts/&lt;part-name&gt;/src`
+Le contenu de chaque partie sera stocké dans le répertoire `parts/<part-name>/src`
 
 #### 2. Construction des parties (_« Build »_)
 
 Cette étape fait suite à l'étape de _« Récupération des sources »_. 
 
-Chaque partie est construite dans son répertoire `parts/&lt;part-name&gt;/build` et s'installe dans son répertoire `parts/&lt;part-name&gt;/install`
+Chaque partie est construite dans son répertoire `parts/<part-name>/build` et s'installe dans son répertoire `parts/<part-name>/install`
 
+#### 3. Etape de transit (_« Stage »_)
 
-  - stage
-  - strip
-  - snap
+Après l'étape de construction de chaque parties, elles sont combinées en une seule arborescence de répertoires que l'on appelle «zone de transit» et qui se trouve dans le répertoire `./stage` 
+
+C'est à l'intérieur de cette zone que toutes les parties peuvent partager des actifs tels que des librairies.
+
+#### 4. Dépouillement du snap (_« Strip »_)
+
+Lors de cette étape de dépouillement, les données sont déplacées dans le répertoire `./snap` qui ne contiendra que le contenu qui sera mis dans le paquet snap final, contrairement à la zone de transit, dont on a parlé à l'instant, qui peut inclure des fichiers de développement non destinés au paquet.
+
+Les informations de métadonnées Snappy de votre projet vont aussi être placées dans le répertoire `./snap/meta`.
+
+Ce répertoire `./snap` est très utile pour inspecter ce qui se passe dans votre application snap et faire des post-traitements finaux sur la sortie de `snapcraft.`
+
+#### 5 . Construction du paquet snap (_« Snap »_)
+
+La dernière étape construit l'archive squashf (paquet snap) dans le répertoire de travail.
+
+#### 6. Etape par étape
+
+Chaque étape du workflow peut être simulée en la précisant en argument de Snapcraft :
+
+````sh
+    $ snapcraft pull
+    $ snapcraft build
+    $ snapcraft stage
+    $ snapcraft strip
+    $ snapcraft snap 
+````
 
