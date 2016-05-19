@@ -109,7 +109,7 @@ Ce répertoire `./snap` est très utile pour inspecter ce qui se passe dans votr
 
 La dernière étape construit l'archive squashf (paquet snap) dans le répertoire de travail.
 
-#### 6. Etape par étape
+#### Etape par étape
 
 Chaque étape du workflow peut être simulée en la précisant en argument de Snapcraft :
 
@@ -120,4 +120,12 @@ Chaque étape du workflow peut être simulée en la précisant en argument de Sn
     $ snapcraft strip
     $ snapcraft snap 
 ````
+
+### Conclusion
+
+Voilà, c'est tout pour aujourd'hui. Nous avons vu les bases pour comprendre ce qui suit. Dans le prochain épisode nous étudieront le fonctionnement du fichier snapcraft.yaml permettant de construire une application de téléchargement de vidéo YouTube, YouTube-downloader, basée sur l'utilitaire `youtube-dl`.
+
+Merci d'avoir suivi cette vidéo, n'hésitez pas à faire part de vos critiques dans les commentaires. Pouce vert si vous avez aimé, pouce rouge si vous n'avez pas aimé, mercid e votre retour.
+
+A bientôt
 
