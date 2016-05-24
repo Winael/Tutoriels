@@ -1,4 +1,4 @@
-Bienvenue dans ce premier tutoriel traitant du nouveau paquet d’application snap d’Ubuntu et de l’outils de génération,Snapcraft.
+Bienvenue dans ce premier tutoriel traitant du nouveau paquet d’application snap d’Ubuntu et de l’outils de génération, Snapcraft.
 
 Dans cette série de tutoriel nous étudierons ensemble différents cas pratiques de construction de paquets snaps au travers de leurs fichier de génération, le fichier `snapcraft.yaml`. Afin de bien comprendre ce qui va suivre, nous expliquerons, dans ce premier tutoriel, ce que sont les paquets d’applications snap et comment fonctionne Snapcraft
 
