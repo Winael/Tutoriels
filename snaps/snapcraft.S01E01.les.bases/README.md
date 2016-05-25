@@ -2,6 +2,8 @@ Bienvenue dans ce premier tutoriel traitant du nouveau paquet d’application sn
 
 Dans cette série de tutoriel nous étudierons ensemble différents cas pratiques de construction de paquets snaps au travers de leurs fichier de génération, le fichier `snapcraft.yaml`. Afin de bien comprendre ce qui va suivre, nous expliquerons, dans ce premier tutoriel, ce que sont les paquets d’applications snap et comment fonctionne Snapcraft
 
+Permettez-moi tout d'abord de me présenter. Je m'appelle Winael, je suis membre officiel de la Communauté Ubuntu depuis un peu plus d'un an, où j'officie principalement en tant qu'évangéliste. Aujourd'hui je promeus Snappy Ubuntu Core et les paquets d'applications snaps sur différents événements IRL (Salons, rencontre hackers, etc.) et en ligne. 
+
 Episode 1 : Les bases
 =====================
 
